@@ -1,0 +1,15 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+namespace CodeBase.Infrastructure.AssetManagment
+{
+    public class AssetProvider
+    {
+        public List<T> LoadAll<T>(string path) where T : Object => 
+            Resources.LoadAll<T>(path).ToList();
+
+        public T Load<T>(string path) where T : Object => 
+            Resources.Load<T>(path);
+    }
+}
