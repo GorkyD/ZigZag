@@ -7,6 +7,8 @@ namespace CodeBase.Infrastructure.Data
     {
         [Header("Player")][Space]
         public float playerSpeed;
+
+        public bool isStart = false;
         public bool isDead = false;
     }
 }

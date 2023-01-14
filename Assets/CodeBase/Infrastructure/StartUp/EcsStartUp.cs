@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using CodeBase.Infrastructure.Data;
+using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Systems;
 using CodeBase.Infrastructure.Systems.CameraSystems;
 using CodeBase.Infrastructure.Systems.PlayerSystems;
@@ -17,11 +18,13 @@ public class EcsStartUp : MonoBehaviour
     private EcsSystems _updateSystems;
     private EcsSystems _fixedUpdateSystems; 
     private EcsSystems _lateUpdateSystems;
+
+    private ScoreCountService _scoreCountService;
     
     [Inject]
-    private void Construct()
+    private void Construct(ScoreCountService scoreCountService)
     {
-
+        _scoreCountService = scoreCountService;
     }
     
     private void Start()
@@ -32,11 +35,13 @@ public class EcsStartUp : MonoBehaviour
         _lateUpdateSystems = new EcsSystems(_ecsWorld);
         
         _updateSystems
+            .Add(new StartButtonInitSystem())
             .Add(new ResetWorldInitSystem())
             .Add(new PlayerInitSystem())
             .Add(new PlayerInputSystem())
             .Add(new PlayerMoveSystem())
             .Add(new PlayerDeathSystem())
+            .Inject(_scoreCountService)
             .Inject(configuration)
             .Inject(sceneData);
 

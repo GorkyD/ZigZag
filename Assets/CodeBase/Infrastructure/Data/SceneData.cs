@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace CodeBase.Infrastructure.Data
@@ -11,7 +12,11 @@ namespace CodeBase.Infrastructure.Data
 
         [Space][Header("Ui")][Space]
         public Canvas mainCanvas;
+        public Button startScreenButton;
         public Button resetButton;
+        public TextMeshProUGUI scoretext;
+        public TextMeshProUGUI highScoreText;
+        public TextMeshProUGUI gamesPlayedText;
         
         [Space]
         public GameObject baseTile;

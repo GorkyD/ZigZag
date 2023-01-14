@@ -1,5 +1,6 @@
 ﻿using System;
 using CodeBase.Infrastructure.Data;
+using CodeBase.Infrastructure.Services;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace CodeBase.Infrastructure.Systems.PlayerSystems
     public class PlayerInputSystem : IEcsRunSystem
     {
         private EcsFilter<PlayerInputData> _filter;
+        private ScoreCountService _scoreCountService;
         private StaticData _staticData;
         
         public void Run()
@@ -23,6 +25,7 @@ namespace CodeBase.Infrastructure.Systems.PlayerSystems
                     {
                         input.Direction = Vector3.forward;
                     }
+                    _scoreCountService.AddScore();
                 }
             }
         }
