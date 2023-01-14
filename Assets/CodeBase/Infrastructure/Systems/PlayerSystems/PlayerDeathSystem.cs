@@ -23,6 +23,7 @@ namespace CodeBase.Infrastructure.Systems.PlayerSystems
                 if (!Physics.Raycast(rayToDown,out _))
                 {
                     _staticData.isDead = true;
+                    _sceneData.pauseButton.gameObject.SetActive(false);
                     _sceneData.resetButton.gameObject.SetActive(true);
                 }
             }    

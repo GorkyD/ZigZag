@@ -40,7 +40,7 @@ namespace CodeBase.Infrastructure.Services
         public void AddScore()
         {
             _score++;
-            _sceneData.scoretext.text = _score.ToString();
+            _sceneData.scoreText.text = _score.ToString();
             HighScore = _score;
             PlayerPrefs.Save();
         }

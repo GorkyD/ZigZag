@@ -12,9 +12,12 @@ namespace CodeBase.Infrastructure.Data
 
         [Space][Header("Ui")][Space]
         public Canvas mainCanvas;
-        public Button startScreenButton;
         public Button resetButton;
-        public TextMeshProUGUI scoretext;
+        public Button startScreenButton;
+        public Button pauseButton;
+        public GameObject inGamePanel;
+        [Space]
+        public TextMeshProUGUI scoreText;
         public TextMeshProUGUI highScoreText;
         public TextMeshProUGUI gamesPlayedText;
         

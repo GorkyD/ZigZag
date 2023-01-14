@@ -13,7 +13,8 @@ namespace CodeBase.Infrastructure.Systems
             _sceneData.startScreenButton.onClick.AddListener(() =>
             {
                 _staticData.isStart = true;
-                _sceneData.scoretext.gameObject.SetActive(true);
+                _sceneData.inGamePanel.SetActive(true);
+                _sceneData.scoreText.gameObject.SetActive(true);
                 _sceneData.startScreenButton.gameObject.SetActive(false);
             });
         }

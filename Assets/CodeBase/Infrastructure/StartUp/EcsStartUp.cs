@@ -35,6 +35,7 @@ public class EcsStartUp : MonoBehaviour
         _lateUpdateSystems = new EcsSystems(_ecsWorld);
         
         _updateSystems
+            .Add(new PauseButtonInitSystem())
             .Add(new StartButtonInitSystem())
             .Add(new ResetWorldInitSystem())
             .Add(new PlayerInitSystem())
