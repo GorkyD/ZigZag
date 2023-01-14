@@ -11,8 +11,10 @@ namespace CodeBase.Infrastructure.Systems.PlayerSystems
         private EcsWorld _ecsWorld;
         private SceneData _sceneData;
         private StaticData _staticData;
+        
         public void Init()
         {
+            _staticData.isDead = false;
             EcsEntity playerEntity = _ecsWorld.NewEntity();
             AssetProvider assetProvider = new AssetProvider();
             ref var player = ref playerEntity.Get<PlayerComponent>();

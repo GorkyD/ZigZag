@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using CodeBase.Infrastructure.Data;
+using CodeBase.Infrastructure.Systems;
 using CodeBase.Infrastructure.Systems.CameraSystems;
 using CodeBase.Infrastructure.Systems.PlayerSystems;
 using Leopotam.Ecs;
@@ -31,9 +32,11 @@ public class EcsStartUp : MonoBehaviour
         _lateUpdateSystems = new EcsSystems(_ecsWorld);
         
         _updateSystems
+            .Add(new ResetWorldInitSystem())
             .Add(new PlayerInitSystem())
             .Add(new PlayerInputSystem())
             .Add(new PlayerMoveSystem())
+            .Add(new PlayerDeathSystem())
             .Inject(configuration)
             .Inject(sceneData);
 

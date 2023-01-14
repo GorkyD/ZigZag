@@ -8,13 +8,14 @@ namespace CodeBase.Infrastructure.Systems.PlayerSystems
     public class PlayerInputSystem : IEcsRunSystem
     {
         private EcsFilter<PlayerInputData> _filter;
+        private StaticData _staticData;
         
         public void Run()
         {
             foreach (int i in _filter)
             {
                 ref var input = ref _filter.Get1(i);
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0) && _staticData.isDead == false)
                 {
                     input.Direction = input.Direction == Vector3.forward ? Vector3.right : Vector3.forward;
 

@@ -11,15 +11,19 @@ namespace CodeBase.Infrastructure.Systems.CameraSystems
         
         private EcsWorld _ecsWorld;
         private SceneData _sceneData;
+        private StaticData _staticData;
         public void Run()
         {
             foreach (var i in _filter)
             {
-                ref var cameraTransform = ref _filter.Get1(i);
-                ref var cameraComponent = ref _filter.Get2(i);
+                if (_staticData.isDead == false)
+                {
+                    ref var cameraTransform = ref _filter.Get1(i);
+                    ref var cameraComponent = ref _filter.Get2(i);
 
-                cameraTransform.Transform.position = 
-                    Vector3.Lerp(cameraTransform.Transform.position,cameraComponent.FollowTransform.position + _sceneData.mainCameraOffset,Time.deltaTime * 10f); ;
+                    cameraTransform.Transform.position = 
+                        Vector3.Lerp(cameraTransform.Transform.position,cameraComponent.FollowTransform.position + _sceneData.mainCameraOffset,Time.deltaTime * 10f);
+                }
             }
         }
     }

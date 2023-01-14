@@ -9,5 +9,6 @@ public class SceneBootstrapper : MonoInstaller
     public override void InstallBindings()
     {
         Container.BindInstance(new EcsWorld());
+        Container.BindInterfacesAndSelfTo<SpawnTileService>().AsSingle().NonLazy();
     }
 }

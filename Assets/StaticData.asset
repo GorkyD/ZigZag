@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: StaticData
   m_EditorClassIdentifier: 
   playerSpeed: 5
+  isDead: 1
