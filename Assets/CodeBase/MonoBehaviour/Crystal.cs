@@ -14,6 +14,7 @@ public class Crystal : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer != 6) return;
+        _serviceInstaller.AudioService.PlayCollectSound();
         _serviceInstaller.ScoreCountService.AddScore();
         particleSystem.Play();
         gameObject.SetActive(false);

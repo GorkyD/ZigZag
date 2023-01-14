@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using CodeBase.Infrastructure.Data;
 using CodeBase.Infrastructure.Services;
+using CodeBase.Infrastructure.Services.Audio;
 using CodeBase.Infrastructure.Systems;
 using CodeBase.Infrastructure.Systems.CameraSystems;
 using CodeBase.Infrastructure.Systems.PlayerSystems;
@@ -20,11 +21,13 @@ public class EcsStartUp : MonoBehaviour
     private EcsSystems _lateUpdateSystems;
 
     private ScoreCountService _scoreCountService;
-    
+    private AudioService _audioService;
+
     [Inject]
-    private void Construct(ScoreCountService scoreCountService)
+    private void Construct(ScoreCountService scoreCountService, AudioService audioService)
     {
         _scoreCountService = scoreCountService;
+        _audioService = audioService;
     }
     
     private void Start()
@@ -42,6 +45,7 @@ public class EcsStartUp : MonoBehaviour
             .Add(new PlayerInputSystem())
             .Add(new PlayerMoveSystem())
             .Add(new PlayerDeathSystem())
+            .Inject(_audioService)
             .Inject(_scoreCountService)
             .Inject(configuration)
             .Inject(sceneData);

@@ -1,5 +1,6 @@
 ﻿using CodeBase.Infrastructure.Components;
 using CodeBase.Infrastructure.Data;
+using CodeBase.Infrastructure.Services.Audio;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace CodeBase.Infrastructure.Systems.PlayerSystems
     {
         private EcsFilter<TransformComponent,PlayerComponent,PlayerInputData> _filter;
         private StaticData _staticData;
+
         public void Run()
         {
             foreach (int i in _filter)

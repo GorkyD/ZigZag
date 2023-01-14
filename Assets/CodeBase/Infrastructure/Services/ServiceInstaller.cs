@@ -1,16 +1,19 @@
 using CodeBase.Infrastructure.Services;
+using CodeBase.Infrastructure.Services.Audio;
 using UnityEngine;
 using Zenject;
 
 public class ServiceInstaller : MonoBehaviour
 {
-    public SpawnTileService SpawnTileService;
     public ScoreCountService ScoreCountService;
-    
+    public SpawnTileService SpawnTileService;
+    public AudioService AudioService;
+
     [Inject]
-    private void Construct(SpawnTileService spawnTileService,ScoreCountService scoreCountService)
+    private void Construct(SpawnTileService spawnTileService,ScoreCountService scoreCountService,AudioService audioService)
     {
-        SpawnTileService = spawnTileService;
         ScoreCountService = scoreCountService;
+        SpawnTileService = spawnTileService;
+        AudioService = audioService;
     }
 }

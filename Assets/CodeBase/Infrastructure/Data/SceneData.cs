@@ -24,5 +24,8 @@ namespace CodeBase.Infrastructure.Data
         [Space]
         public GameObject baseTile;
         public Transform playerSpawnPoint;
+
+        [Space] [Header("Audio")] [Space] 
+        public AudioSource audioSource;
     }
 }
