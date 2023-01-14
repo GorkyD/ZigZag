@@ -1,5 +1,4 @@
 ﻿using CodeBase.Infrastructure.Data;
-using Leopotam.Ecs;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.Audio

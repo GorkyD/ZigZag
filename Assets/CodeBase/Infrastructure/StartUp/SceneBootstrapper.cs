@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.Audio;
 using Leopotam.Ecs;
@@ -8,12 +6,12 @@ using Zenject;
 
 public class SceneBootstrapper : MonoInstaller
 {
-    [SerializeField] private AudioService _audioService;
+    [SerializeField] private AudioService audioService;
     public override void InstallBindings()
     {
         Container.BindInstance(new EcsWorld());
         Container.BindInterfacesAndSelfTo<SpawnTileService>().AsSingle().NonLazy();
         Container.BindInterfacesAndSelfTo<ScoreCountService>().AsSingle().NonLazy();
-        Container.Bind<AudioService>().FromInstance(_audioService).AsSingle().NonLazy();
+        Container.Bind<AudioService>().FromInstance(audioService).AsSingle().NonLazy();
     }
 }

@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    public int spawnIndex;
     private SpawnTileService _spawnTileService;
+    
+    public int spawnIndex;
 
     private void Start()
     {

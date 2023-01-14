@@ -1,6 +1,5 @@
 ﻿using CodeBase.Infrastructure.Components;
 using CodeBase.Infrastructure.Data;
-using CodeBase.Infrastructure.Services.Audio;
 using Leopotam.Ecs;
 using UnityEngine;
 
