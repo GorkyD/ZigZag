@@ -15,7 +15,8 @@ namespace CodeBase.Infrastructure.Data
         public Button resetButton;
         public Button startScreenButton;
         public Button pauseButton;
-        public Button cheatButton;
+        public Button cheatButtonOn;
+        public Button cheatButtonOff;
         public GameObject inGamePanel;
         public GameObject pausePanel;
         

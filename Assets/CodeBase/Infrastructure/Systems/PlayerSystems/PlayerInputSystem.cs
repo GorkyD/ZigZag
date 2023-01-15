@@ -17,7 +17,7 @@ namespace CodeBase.Infrastructure.Systems.PlayerSystems
         {
             foreach (int i in _filter)
             {
-                if (_staticData.isDead || _staticData.isPause || _staticData.isCheat) continue;
+                if (_staticData.isDead || _staticData.isPause || _staticData.isCheat  || !_staticData.isStart) continue;
                 
                 ref var input = ref _filter.Get1(i);
                 if (Input.GetMouseButtonDown(0))

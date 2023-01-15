@@ -10,10 +10,8 @@ namespace CodeBase.Infrastructure.Systems
         public void Init()
         {
             _staticData.isCheat = false;
-            _sceneData.cheatButton.onClick.AddListener(() =>
-            {
-                _staticData.isCheat = _staticData.isCheat != true;
-            }); 
+            _sceneData.cheatButtonOn.onClick.AddListener(() => { _staticData.isCheat = _staticData.isCheat != true; }); 
+            _sceneData.cheatButtonOff.onClick.AddListener(() => { _staticData.isCheat = _staticData.isCheat != true; }); 
         }
     }
 }
