@@ -3,6 +3,7 @@ using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.Audio;
 using CodeBase.Infrastructure.Systems;
 using CodeBase.Infrastructure.Systems.CameraSystems;
+using CodeBase.Infrastructure.Systems.CheatSystems;
 using CodeBase.Infrastructure.Systems.PlayerSystems;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -36,19 +37,23 @@ public class EcsStartUp : MonoBehaviour
         _lateUpdateSystems = new EcsSystems(_ecsWorld);
         
         _updateSystems
-            .Add(new PauseButtonInitSystem())
-            .Add(new StartButtonInitSystem())
-            .Add(new ResetWorldInitSystem())
             .Add(new PlayerInitSystem())
             .Add(new PlayerInputSystem())
             .Add(new PlayerMoveSystem())
             .Add(new PlayerDeathSystem())
-            .Inject(_audioService)
+            .Add(new CheatSystem())
             .Inject(_scoreCountService)
+            .Inject(_audioService)
             .Inject(configuration)
             .Inject(sceneData);
 
         _fixedUpdateSystems
+            .Add(new CheatButtonInitSystem())
+            .Add(new PauseButtonInitSystem())
+            .Add(new StartButtonInitSystem())
+            .Add(new ResetWorldInitSystem())
+            .Inject(_scoreCountService)
+            .Inject(_audioService)
             .Inject(configuration)
             .Inject(sceneData);
 

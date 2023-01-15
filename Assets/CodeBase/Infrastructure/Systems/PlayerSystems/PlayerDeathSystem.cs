@@ -21,7 +21,7 @@ namespace CodeBase.Infrastructure.Systems.PlayerSystems
 
                 Ray rayToDown = new Ray(playerTransformComponent.Transform.position, Vector3.down);
 
-                if (!Physics.Raycast(rayToDown,out _))
+                if (!Physics.Raycast(rayToDown,out _) && _staticData.isDead == false)
                 {
                     _staticData.isDead = true;
                     _sceneData.pauseButton.gameObject.SetActive(false);

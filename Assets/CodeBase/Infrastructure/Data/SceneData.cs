@@ -15,7 +15,10 @@ namespace CodeBase.Infrastructure.Data
         public Button resetButton;
         public Button startScreenButton;
         public Button pauseButton;
+        public Button cheatButton;
         public GameObject inGamePanel;
+        public GameObject pausePanel;
+        
         [Space]
         public TextMeshProUGUI scoreText;
         public TextMeshProUGUI highScoreText;

@@ -8,10 +8,11 @@ namespace CodeBase.Infrastructure.Data
         [Header("Player")][Space]
         public float playerSpeed;
 
-        [Space][Header("GameStates")][Space]
+        [Space] [Header("GameStates")] [Space] 
+        public bool isCheat = false;
         public bool isPause = false;
-        public bool isStart = false;
         public bool isDead = false;
+        public bool isStart = false;
 
         [Space] [Header("AudioClips")] [Space] 
         public AudioClip collectSound;

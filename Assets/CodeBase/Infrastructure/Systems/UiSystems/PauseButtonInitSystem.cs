@@ -13,6 +13,7 @@ namespace CodeBase.Infrastructure.Systems
             _staticData.isPause = false;
             _sceneData.pauseButton.onClick.AddListener(() =>
             {
+                _sceneData.pausePanel.SetActive(!_sceneData.pausePanel.activeSelf);
                 _staticData.isPause = _staticData.isPause != true;
             });    
         }
