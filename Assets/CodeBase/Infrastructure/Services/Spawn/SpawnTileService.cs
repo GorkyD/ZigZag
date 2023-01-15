@@ -15,7 +15,9 @@ public class SpawnTileService
     public SpawnTileService()
     {
         _sceneData = Object.FindObjectOfType<SceneData>();
+        
         AssetProvider assetProvider = new AssetProvider();
+        
         _tilePrefabs = new[]
         {
             assetProvider.Load<Tile>(AssetPath.TilePivotBottom),

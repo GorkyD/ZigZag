@@ -7,6 +7,7 @@ namespace CodeBase.Infrastructure.Systems
     {
         private StaticData _staticData;
         private SceneData _sceneData;
+        
         public void Init()
         {
             _staticData.isStart = false;

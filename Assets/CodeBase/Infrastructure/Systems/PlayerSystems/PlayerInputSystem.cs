@@ -9,6 +9,7 @@ namespace CodeBase.Infrastructure.Systems.PlayerSystems
     public class PlayerInputSystem : IEcsRunSystem
     {
         private EcsFilter<PlayerInputData> _filter;
+        
         private ScoreCountService _scoreCountService;
         private AudioService _audioService;
         private StaticData _staticData;

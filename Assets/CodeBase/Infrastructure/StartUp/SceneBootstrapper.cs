@@ -7,6 +7,7 @@ using Zenject;
 public class SceneBootstrapper : MonoInstaller
 {
     [SerializeField] private AudioService audioService;
+    
     public override void InstallBindings()
     {
         Container.BindInstance(new EcsWorld());

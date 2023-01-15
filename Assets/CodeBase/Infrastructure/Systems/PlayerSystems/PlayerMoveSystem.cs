@@ -8,6 +8,7 @@ namespace CodeBase.Infrastructure.Systems.PlayerSystems
     public class PlayerMoveSystem : IEcsRunSystem
     {
         private EcsFilter<TransformComponent,PlayerComponent,PlayerInputData> _filter;
+        
         private StaticData _staticData;
 
         public void Run()

@@ -12,6 +12,7 @@ namespace CodeBase.Infrastructure.Systems.CameraSystems
         private EcsWorld _ecsWorld;
         private SceneData _sceneData;
         private StaticData _staticData;
+        
         public void Run()
         {
             foreach (var i in _filter)

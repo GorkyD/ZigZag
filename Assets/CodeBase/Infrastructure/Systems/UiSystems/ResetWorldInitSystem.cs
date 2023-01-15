@@ -10,6 +10,7 @@ namespace CodeBase.Infrastructure.Systems
     {
         private ScoreCountService _scoreCountService;
         private SceneData _sceneData;
+        
         public void Init()
         {
             _sceneData.resetButton.onClick.AddListener(() =>
